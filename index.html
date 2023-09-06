@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tarefas</title>
+        <link rel="stylesheet">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Gerenciador de tarefas:</h1>
+        </header>
+        <main>
+            <div class="form">
+                <div class="form-group">
+                    <label for="tarefa"></label>
+                    <input type="text" name="tarefa" id="tarefa" placeholder="Insira sua tarefa">
+                    <p id="error"></p>
+                </div>
+                <div class="form-button">
+                    <button onclick=adiciona()>
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <div class="tarefas">
+                <h1>Tarefas Atuais:</h1>
+                <div>
+                    <ul id="listaDeTarefas">
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Feito por João Eduardo Braga, 2023.
+        </footer>
+    </body>
+</html>

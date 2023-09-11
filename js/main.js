@@ -1,17 +1,24 @@
 function adiciona() {
-    const tarefa = document.getElementById('tarefa').value
+    const tarefa = document.getElementById('tarefa').value;
+    let listaDeTarefas = document.getElementById('listaDeTarefas');
 
-    //repetição dos elementos da lista
-    //if da tarefa existente dentro da lista(instância de procura)
-    //return com alert
+    //  obter as tarefas da lista
+    let listaTarefasAdicionadas = listaDeTarefas.querySelectorAll('li');
 
-    let listaDeTarefas = document.getElementById('listaDeTarefas')
+    // verificação da tarefa dentro da lista
+    let existeTarefa = false;
+    listaTarefasAdicionadas.forEach(item => {
+        if (item.textContent === tarefa) {
+            existeTarefa = true;
+            return 0;
+        }
+    });
 
-    let listaTarefasAdicionadas = listaDeTarefas.innerHTML.split('<li>')
-
-    let existeTarefa = listaTarefasAdicionadas.includes(tarefa+'</li>')
-
-    listaDeTarefas.innerHTML = listaDeTarefas.innerHTML + `<li>${tarefa}</li>`
-
-    document.getElementById('tarefa').value='';
+    if (existeTarefa) {
+        alert('Esta tarefa já existe na lista.');
+    } else {
+        // Adicione a tarefa à lista
+        listaDeTarefas.innerHTML += `<li>${tarefa}</li>`;
+        document.getElementById('tarefa').value = '';
+    }
 }

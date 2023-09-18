@@ -18,7 +18,16 @@ function adiciona() {
         alert('Esta tarefa já existe na lista.');
     } else {
         // Adicione a tarefa à lista
-        listaDeTarefas.innerHTML += `<li>${tarefa}</li>`;
+        listaDeTarefas.innerHTML += `<hr><li>${tarefa}</li> <button class="glow-on-hover" type="button" onClick="removeTarefa(this)" style="width: 32%; margin-left: 75%">Feito!</button>`;
         document.getElementById('tarefa').value = '';
     }
+}
+
+function removeTarefa(button) {
+    let tarefaParaRemover = button.parentElement;
+    tarefaParaRemover.remove();
+}
+
+function removeTudo(button){
+    location. reload();
 }
